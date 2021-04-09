@@ -1,0 +1,10 @@
+alphaproteobacteria      1784
+betaproteobacteria        753
+deltaproteobacteria       218
+epsilonproteobacteria     139
+acidithiobacillia           9
+oligoflexia                 9
+zetaproteobacteria          6
+hydrogenophilalia           4
+Name: label, dtype: int64
+
