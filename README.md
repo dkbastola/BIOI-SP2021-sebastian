@@ -1,9 +1,10 @@
 # bioiSeniorProject SPRING 2021
 
 This repository contains all of the scripts used to generate datasets, train machine learning models, and test models used to analyze codon bias in mitochondria.  
-Codon counts are calculated by finding all CDS coordinates using .gff files, extracting those sequences within genomic FASTA files, and dividing each CDS sequence into codons.  
+<br/><br/>
+<em>Codon counts are calculated by finding all CDS coordinates using .gff files, extracting those sequences within genomic FASTA files, and dividing each CDS sequence into codons.  
 All codon counts are represented as .csv files for compatibility with machine learning algorithms.  
-The classifiers built in this study will assign one of four proteobacterial classes: alpha, beta, delta, and epsilon.
+The classifiers built in this study will assign one of four proteobacterial classes: alpha, beta, delta, and epsilon. </em>
 
 Files description:
 * `scripts/get_genomes.py` - Retrieves all reference proteobacterial genomes from NCBI
