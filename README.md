@@ -1,6 +1,6 @@
 # bioiSeniorProject SPRING 2021
 
-This repository contains all of the scripts used to generate datasets, train machine learning models, and test models used to analyze codon bias in mitochondria.
+This repository contains all of the scripts used to generate datasets, train machine learning models, and test models used to analyze codon bias in mitochondria. 
 
 Files description:
 * `scripts/get_genomes.py`
@@ -33,9 +33,9 @@ To recreate the full analysis described in the paper you must:
 * Tabularize all proteobacterial genomes by codon counts
 * Train the 3 models on the tabular dataset
 
-To achieve the full analysis run the following files: \
+To achieve the full analysis run the following files: 
 
-\
+ \\
 
 
 1. Download all genomes using NCBI's dataset tool: `./get_genomes.py`
