@@ -68,7 +68,7 @@ To achieve the full analysis run the following files:
 **Note**: The XGBoost model also displays variable weights.
 <br/><br/>
 # Alternative Running Method
-Since steps 1-4 are time consuming, they be skipped above by running `cp datasets/testing_set.csv datasets/training_set.csv scripts/` or by moving both files into the scripts folder using other methods.  
+Since steps 1-4 are time consuming, they can be skipped above by running `cp datasets/testing_set.csv datasets/training_set.csv scripts/` or by moving both files into the scripts folder using other methods.  
 After moving the training and testing sets into `scripts`, you can run step 5.
 
 
