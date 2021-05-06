@@ -69,7 +69,7 @@ mito_df2.to_csv('nnet_predicted.csv', index=False)
 print(confusion_matrix(y_test,predictions))
 print(classification_report(y_test,predictions))
 
-print(predictions_mito)
+print('mitochondrial predictions: ', predictions_mito)
 
 # ROC curve
 y_score = mlp.predict_proba(X_test)
@@ -77,7 +77,7 @@ n_classes = 3
 
 
 y_score = mlp.predict_proba(X_test)
-print(roc_auc_score(y_test, y_score, multi_class='ovr'))
+
 
 # ROC
 
@@ -103,7 +103,7 @@ for i, color in zip(range(n_classes), colors):
              label='ROC curve of class {0} (area = {1:0.2f})'
              ''.format(subset[i], roc_auc[i]))
 
-print(roc_auc_score(y_test, y_score, multi_class='ovr'))
+print('AUC', roc_auc_score(y_test, y_score, multi_class='ovr'))
 plt.plot([0, 1], [0, 1], 'k--', lw=1)
 plt.xlim([-0.05, 1.0])
 plt.ylim([0.0, 1.05])

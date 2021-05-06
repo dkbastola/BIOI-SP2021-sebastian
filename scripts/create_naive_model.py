@@ -55,7 +55,7 @@ cr = classification_report(y_test,gnb_predictions)
 print(cm)
 print(cr)
 predictions_mito = gnb.predict(X_mito)
-print(predictions_mito)
+print('mitochondrial predictions: ',predictions_mito)
 
 # ROC/AUC
 y = tdf.select_dtypes(include=[object])
@@ -80,7 +80,7 @@ for i, color in zip(range(n_classes), colors):
              label='ROC curve of class {0} (area = {1:0.2f})'
              ''.format(subset[i], roc_auc[i]))
 
-print(roc_auc_score(y_test, y_score, multi_class='ovr'))
+print('AUC', roc_auc_score(y_test, y_score, multi_class='ovr'))
 plt.plot([0, 1], [0, 1], 'k--', lw=1)
 plt.xlim([-0.05, 1.0])
 plt.ylim([0.0, 1.05])

@@ -59,12 +59,13 @@ mito_df.to_csv('xgboost_predicted.csv')
 print(confusion_matrix(y_test, predictions))
 print(classification_report(y_test, predictions))
 
-print(y_pred)
+# Mitochondrial predictions
+print('mitochondrial predictions: ', y_pred)
 y_score = xgb_model.fit(X_train, y_train).predict_proba(X_test)
 
-print(roc_auc_score(y_test, y_score, multi_class='ovr'))
+print('AUC ',roc_auc_score(y_test, y_score, multi_class='ovr'))
 
 varimp= xgb_model.feature_importances_.argsort()
 
-print(varimp)
+print('Variable importance: ', varimp)
 
