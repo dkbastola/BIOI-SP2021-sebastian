@@ -1,16 +1,23 @@
 # bioiSeniorProject SPRING 2021
 
-This repository contains all of the scripts used to generate datasets, train machine learning models, and test models used to analyze codon bias in mitochondria. 
+This repository contains all of the scripts used to generate datasets, train machine learning models, and test models used to analyze codon bias in mitochondria.  
+Codon counts are calculated by finding all CDS coordinates using .gff files, extracting those sequences within genomic FASTA files, and dividing each CDS sequence into codons.  
+All codon counts are represented as .csv files for compatibility with machine learning algorithms.  
+The classifiers built in this study will assign one of four proteobacterial classes: alpha, beta, delta, and epsilon.
 
 Files description:
-* `scripts/get_genomes.py`
-* `scripts/create_training_set.py`
-* `scripts/create_naive_model.py`
-* `scripts/create_xgboost_model.py`
-* `scripts/create_neural_model.py`
-* `scripts/datasets`
-* `scripts/get_mito.py`
-* `scripts/species_list.txt`
+* `scripts/get_genomes.py` - Retrieves all reference proteobacterial genomes from NCBI
+* `scripts/create_training_set.py` - Creates proteobacterial codon count .csv file for training the models
+* `scripts/create_naive_model.py` - Trains and tests the Naive Bayes model
+* `scripts/create_xgboost_model.py` - Trains and tests the XGBoost model
+* `scripts/create_neural_model.py` - Trains and create the Artificial Neural Network model (Multilayer Perceptron)
+* `scripts/datasets` - Executable file from NCBI to download bulk datasets (used by `get_genomes.py` and `get_mito.py`)
+* `scripts/get_mito.py` - Retrieves 37 reference mitochondrial genomes from NCBI
+* `scripts/species_list.txt` - Contains all 37 mitochondrial species names
+* `scripts/codonDict.txt` - Text file containing all 64 codons (used by `create_training_set.py` and `create_testing_set.py`)  
+
+* `datasets/training_set.csv` - Codon counts from all proteobacterial genomes retrieved by `get_genomes.py` used to train all 3 models.
+* `datasets/testing_set.csv` - Codon counts from 37 mitochondrial genomes retrieved by `get_mito.py` used to test all 3 models.
 
 # Requirements
 * Python 3
