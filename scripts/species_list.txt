@@ -1,0 +1,56 @@
+Bufo bufo
+Geotrypetes seraphini
+Microcaecilia unicolor
+Xenopus laevis
+Rhinatrema bivittatum
+Rana temporaria
+Acanthisitta chloris
+Gallus gallus
+Motacilla alba
+Taeniopygia guttata
+Numida meleagris
+Danio rerio
+Cyclopterus lumpus
+Electrophorus electricus
+Xiphophorus maculatus
+Sparus aurata
+Schistosoma mansoni
+Taenia multiceps
+Clonorchis sinensis
+Acyrthosiphon pisum
+Aedes aegypti
+Drosophila melanogaster
+Nilaparvata lugens
+Trichoplusia ni
+Hermetia illucens
+Ailuropoda melanoleuca
+Bos taurus
+Camelus dromedarius
+Canis lupus familiaris
+Felis catus
+Equus caballus
+Branchiostoma floridae
+Ciona intestinalis
+Penaeus monodon
+Dermacentor silvarum
+Daphnia magna
+Chrysemys picta bellii
+Chelonia mydas
+Podarcis muralis
+Trachemys scripta elegans
+Gopherus evgoodei
+Saccharomyces cerevisiae
+Debaryomyces hansenii
+Candida albicans
+Zymoseptoria tritici
+Torulaspora delbrueckii
+Arabidopsis thaliana
+Bathycoccus prasinos
+Brassica napus
+Phaseolus vulgaris
+Vitis vinifera
+Ziziphus jujuba
+Ostreococcus tauri
+Dictyostelium discoideum
+Hemiselmis andersenii
+Plasmodium chabaudi chabaudi
