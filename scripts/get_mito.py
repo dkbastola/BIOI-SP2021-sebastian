@@ -68,17 +68,9 @@ def download_gb(ddir, mt_fna):
             mf.write(line)
 
 
- 
+get_mito_genomes()
 
-#get_mito_genomes()
-
-#unzip_all(species_dir)
-#for refseq in refList:
-#    handle = Entrez.efetch(db='nuccore', id=refseq, rettype='gbwithparts', retmode='text')
-#
-#    with open(refseq, 'w') as f:
-#        for line in handle:
-#            f.write(line)
+unzip_all(species_dir)
 
 for species in os.listdir(species_dir):
 

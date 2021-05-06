@@ -55,10 +55,11 @@ def unzip_all(directory):
 
             os.system(cmd + filename + ' -d ' + temp_dir)
 
-# Search for all gammaproteobacteria
-#get_terms(gamma_terms)
 
 # Search for all other proteobacteria
-# get_terms(search_terms)
+#get_terms(search_terms)
+
+# Search for all gammaproteobacteria
+#get_terms(gamma_terms)
 
 unzip_all('.')
