@@ -23,7 +23,7 @@ mito_df2 = pd.read_csv('testing_set.csv')
 
 subset = ['alphaproteobacteria', 'betaproteobacteria', 'deltaproteobacteria', 'epsilonproteobacteria']
 
-
+# Make all samples equal in size
 tdf = tdf[tdf['label'].isin(subset)]
 tdf = tdf.groupby('label')
 tdf = pd.DataFrame(tdf.apply(lambda x: x.sample(tdf.size().min()).reset_index(drop=True)))
@@ -62,7 +62,6 @@ mlp.fit(X_train, y_train.values.ravel())
 predictions = mlp.predict(X_test)
 predictions_mito = mlp.predict(X_mito)
 mito_df2['predicted'] = predictions_mito
-mito_df2.to_csv('nnet_predicted.csv', index=False)
 
 
 
@@ -79,7 +78,7 @@ n_classes = 3
 y_score = mlp.predict_proba(X_test)
 
 
-# ROC
+# ROC Plot
 
 y = tdf.select_dtypes(include=[object])
 y = label_binarize(y, classes=['alphaproteobacteria', 'betaproteobacteria', 'deltaproteobacteria', 'epsilonproteobacteria'])

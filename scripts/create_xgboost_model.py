@@ -46,15 +46,16 @@ le = preprocessing.LabelEncoder()
 y = y.apply(le.fit_transform)
 print(y.label.unique())
 
+# Split the data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.10)
 
+# Train the model
 xgb_model = xgb.XGBClassifier(objective="multi:softprob", random_state=42)
 xgb_model.fit(X_train, y_train.values.ravel())
 
 predictions = xgb_model.predict(X_test)
 y_pred = xgb_model.predict(X_mito)
 mito_df['predicted'] = y_pred
-mito_df.to_csv('xgboost_predicted.csv')
 
 print(confusion_matrix(y_test, predictions))
 print(classification_report(y_test, predictions))
@@ -63,8 +64,10 @@ print(classification_report(y_test, predictions))
 print('mitochondrial predictions: ', y_pred)
 y_score = xgb_model.fit(X_train, y_train).predict_proba(X_test)
 
+# AUC 
 print('AUC ',roc_auc_score(y_test, y_score, multi_class='ovr'))
 
+# Variable importance values
 varimp= xgb_model.feature_importances_.argsort()
 
 print('Variable importance: ', varimp)

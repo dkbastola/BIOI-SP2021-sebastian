@@ -23,7 +23,7 @@ mito_df = pd.read_csv('testing_set.csv')
 
 subset = ['alphaproteobacteria', 'betaproteobacteria', 'deltaproteobacteria', 'epsilonproteobacteria']
 
-
+# Make all samples equal in size
 tdf = tdf[tdf['label'].isin(subset)]
 tdf = tdf.groupby('label')
 tdf = pd.DataFrame(tdf.apply(lambda x: x.sample(tdf.size().min()).reset_index(drop=True)))
@@ -57,7 +57,7 @@ print(cr)
 predictions_mito = gnb.predict(X_mito)
 print('mitochondrial predictions: ',predictions_mito)
 
-# ROC/AUC
+# ROC/AUC calculations
 y = tdf.select_dtypes(include=[object])
 y = label_binarize(y, classes=['alphaproteobacteria', 'betaproteobacteria', 'deltaproteobacteria', 'epsilonproteobacteria'])
 classifier = OneVsRestClassifier(GaussianNB())
@@ -67,6 +67,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
 y_score = classifier.fit(X_train, y_train).predict_proba(X_test)
 n_classes = y.shape[1]
 
+# Create ROC plot
 fpr = dict()
 tpr = dict()
 roc_auc = dict()

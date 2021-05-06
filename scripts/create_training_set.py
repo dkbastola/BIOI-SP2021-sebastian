@@ -11,9 +11,12 @@ species_dir = ['alphaproteobacteria', 'betaproteobacteria', 'deltaproteobacteria
                 'acidithiobacillia', 'hydrogenophilalia']
 
 path = '/home/sespinoza/genome_datasets/'
+
+# Output file w/ codon counts
 t_file = open('training_set.csv', 'w')
 codon_dict = {}
 
+# Generate codon dictionary from codonDic.txt
 def create_codon_dict(cd):
 
     # Read file with codons
@@ -32,12 +35,13 @@ def find_file(p, pattern):
         if filename.endswith(pattern):
             return p + '/' + filename
 
+# Retrieve the species name of a record
 def record_name(r):
     with open(r, 'r') as f:
         return f.read().strip('\n').split(' ')[1]
 
 
-
+# Generate codon counts as a dictionary
 def count_codons(f, db, cd):
     for cds in db.features_of_type('CDS', order_by='start'):
         try:
@@ -66,11 +70,13 @@ def count_codons(f, db, cd):
 # create codon dict
 codon_dict = create_codon_dict(codon_dict)
 
-# Output header
+# Codon count csv file header
 header = 'species,' + ','.join(list(codon_dict.keys())) + ',label' + '\n'
 t_file.write(header)
 
+# Iterate through all proteobacterial species and calculate codon counts
 for species in species_dir:
+
     for filename in os.listdir(species + '/ncbi_dataset/data'):
         
         gdir = path + species + '/ncbi_dataset/data/' + filename
@@ -97,6 +103,7 @@ for species in species_dir:
             codon_dict = dict.fromkeys(codon_dict, 0)
 
 
+# close output file
 t_file.close()
 
 

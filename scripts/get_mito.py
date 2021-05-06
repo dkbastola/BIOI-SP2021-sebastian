@@ -14,6 +14,7 @@ Entrez.email = email
 
 species_dir = 'testing/'
 
+# Retrieve all mt genomes in species_list.txt
 def get_mito_genomes():
     with open('species_list.txt', 'r') as f:
         for line in f:
@@ -48,6 +49,7 @@ def unzip_all(directory):
 
             os.system(cmd + directory + filename + ' -d ' + temp_dir)
 
+# Download mt genomes in genbank format
 def download_gb(ddir, mt_fna):
     mt_path = ddir + '/' + mt_fna
 
@@ -72,6 +74,7 @@ get_mito_genomes()
 
 unzip_all(species_dir)
 
+# Iterate through all mitochondrial genomes
 for species in os.listdir(species_dir):
 
     current_dir = species_dir + species + '/ncbi_dataset/data/' 
