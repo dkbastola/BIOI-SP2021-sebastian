@@ -33,19 +33,19 @@ To recreate the full analysis described in the paper you must:
 * Tabularize all proteobacterial genomes by codon counts
 * Train the 3 models on the tabular dataset
 
-To achieve the full analysis run the following files:__
+To achieve the full analysis run the following files:  
 
 1. Download all genomes using NCBI's dataset tool: `./get_genomes.py`
 * input: N/A
 * output: unzipped directories containing .fna and .gff files for proteobacterial genomes
 
-**Note**: This process make take several hours and the files downloaded span more than 100+ GB.__
+**Note**: This process make take several hours and the files downloaded span more than 100+ GB.  
 
 2. Process all genomic files: `./create_training_set.py`
 * input: .fna and .gff files fetched by `get_genomes.py`
 * output: `training_set.csv` -- file that contains all codon counts as comma-separated values 
 
-**Note**: This script may take 30 min or more to run.__
+**Note**: This script may take 30 min or more to run.  
 
 3. Train machine learning models: `./create_naive_model.py`, `./create_xgboost_model.py`, and `./create_neural_model.py`
 * input: `training_set.csv`
