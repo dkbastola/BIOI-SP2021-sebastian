@@ -35,7 +35,8 @@ To recreate the full analysis described in the paper you must:
 
 To achieve the full analysis run the following files: 
 
-#  
+
+<br/><br/> 
  
 
 1. Download all genomes using NCBI's dataset tool: `./get_genomes.py`
